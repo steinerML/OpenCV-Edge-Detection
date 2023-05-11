@@ -12,9 +12,9 @@ These are - in a nutshell - the main steps I took to put this small experiment t
 + **Adjust scaleFactor()**
 + **Size Thresholding via minSize() and maxSize()**
 + **Set minNeighbors()**
-+ **Apply Tracker (object_tracker.py)**
++ **Overall checks**
 
-![Source Image Sequence](general.gif)
+![Source Image Sequence](general_1.gif) ![Source Image Sequence](general.gif)
 
 ## Contents :
 Object detection and tracking has numerous applications in computer vision, thus I wanted to summarize the main challenges we face when approaching a detection and tracking app in the following table. As we give solutions to challenges via built-in functions, I have only included the main functions used and a brief description of what each one does.
