@@ -7,8 +7,8 @@ The method I used is the so-called haar cascade together with a Cascade Classifi
 These are - in a nutshell - the main steps I took to put this small experiment together:
 
 + **Install Cascade Trainer GUI**
-+ **Prepare 150 positive images & 300 negative images (Negative to Positive ratio 2:1**
-+ **Apply settings to Cascade Trainer **
++ **Prepare 150 positive images & 300 negative images (Negative to Positive ratio 2:1)**
++ **Apply settings to Cascade Trainer**
 + **Creation of ROI (Region of Interest)**
 + **Apply Mask to ROI**
 + **Detect Objects in ROI**
