@@ -39,102 +39,32 @@ Below a summary of the main functions used with the haar cascade classifier:
 ![Source Image Sequence.](positive.gif)
 
 ## Issues:
-Several issues around the detection and tracking algorithm can be spotted if we take a closer look at some of the screenshots provided.
+Although several issues can be spotted right away once we run the program, the fact that the overall detection can be fine-tuned via several parameters such as ```minNeighbors()``` improves the overall experience with the cascade classifier. Actually, it is not detecting any object nor a colour, indeed it is just trying to find features based on the blueprints we mentioned before, so it is basically a feature detection method that plays with the contrast and brightness. Therefore, the positive images were taken with different backgrounds so we can create a cascade classifier with enough contrast and brightness variety. Indeed, the shades generated during the video recording had a huge effect on the results of the feature detection, that's why I decided to play with the background colours and textures, so we can have as much shades of contrast as possible.
+
 Most of the issues are related with:
 
-+ Camera Instability.
-+ Lighting Granularity.
-+ Shade Inconsistency.
-+ Poor Colour Thresholding.
++ Improper illumination.
++ Shades.
++ Color post-processing. I should have used ```cv2.COLOR_BGR2GRAY()``` instead of ```cv2.COLOR_BGR2LAB()``, but the latter was hard to fine-tune.
++ Haar Cascade Classifier settings (Need to study a bit more what each setting does!).
 
 ![Source Image Sequence](general.gif)
 
 ## Summary:
 
 ```python
-# Create object detector via a mask
-object_detector = cv2.createBackgroundSubtractorMOG2()
+# Load Cascade Classifier
+cv2.CascadeClassifier()
 ```
 ```python
-# Create object detector (improved with parameters)
-cv2.createBackgroundSubtractorMOG2(history=100, varThreshold=10)
+# Initialize video capture
+cv2.VideoCapture()
 ```
 ```python
-# Find contours of the objects in the mask
-cv2.findContours(mask,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
+# Color space conversion (Should be cv2.COLOR_BGR2GRAY)
+cv2.cvtColor(frame, cv2.COLOR_BGR2LAB)
 ```
 ```python
 # Calculate area delimited by the contours (so we can impose a conditional later)
 cv2.drawContours(roi,[cnt], -1, (0,255,0), 2)
 ```
-```python
-# Define Region of Interest (ROI)
-roi = frame[340:720,500:800]
-```
-```python
-#Apply the mask to ROI
-object_detector.apply(roi)
-```
-```python
-#Apply the mask to frame
-object_detector.apply(frame)
-```
-```python
-#Extract coordinates from contours
-contours, _ = cv2.Contours(mask,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
-```
-```python
-#Calculate area of contours
-area = cv2.contourArea(cnt)
-```
-```python
-#Define Region of Interest (ROI)
-roi = frame[340:720,500:800]
-```
-```python
-#Apply mask to ROI
-mask = object_detector.apply(roi)
-```
-```python
-#Improved detection via parameters!
-object_detector = cv2.createBackgroundSubtractorMOG2(history=100, varThreshold=80)
-```
-```python
-#Draw rectangle based on contours
-x,y,w,h = cv2.boundingRect(cnt)
-```
-```python
-#Apply threshold to mask
- _, mask = cv2.threshold(mask, 254,255,cv2.THRESH_BINARY)
-```
-```python
-#Create object tracker
-tracker = EuclideanDistTracker()
-```
-```python
-#Define empty list for object detection coordinates.
-detections = []
-```
-```python
-#Append coordinates to list
-detections.append([x,y,w,h])
-```
-```python
-#Update detections with box id
-box_id = tracker.update(detections)
-```
-```python
-#Add text (id number)
-cv2.putText(roi,str(id), (x,y - 15),cv2.FONT_HERSHEY_COMPLEX, 0.5,(0,0,255),1)
-```
-```python
-#Draw rectangle
-cv2.rectangle(roi,(x,y),(x + w, y + h), (0,255,0), 3)
-```
-```python
-#Print all windows (Source, Mask, ROI)
-cv2.imshow("Frame", frame)
-cv2.imshow("Mask", mask)
-cv2.imshow("ROI", roi)
-```
-
