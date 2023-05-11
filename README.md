@@ -1,7 +1,7 @@
 # OpenCV Feature Detection using Haar Cascade
-Edge Detection via Haar Cascade (Viola-Jones Algorithm) using OpenCV
 
-In this short app I have applied the basic principles of object detection and tracking using OpenCV.
+In this short coding exercise I have applied the basic principles of face detection but applied to something so simple as an orange by means of a custom-made
+haar cascade XML file that I put together with a set of images (negative&positives) using OS software. using OpenCV.
 
 These are - in a nutshell - the main bullet points that have been approached:
 
