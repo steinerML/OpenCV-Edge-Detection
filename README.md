@@ -14,31 +14,29 @@ These are - in a nutshell - the main steps I took to put this small experiment t
 + **Set minNeighbors()**
 + **Overall checks**
 
-![Source Image Sequence](general_1.gif) ![Source Image Sequence](general.gif)
+![Source Image Sequence](general_1.gif)
 
 ## Contents :
-Feature Detection is quite a tricky and challenging task, specially when you are using a cascade classifier that is meant to be used for face detection and yet you use it on such a simple object as an orange. Bear in mind that the haar cascade classifier is trying to detect features by means of swiping a 'blueprint' (see image below) that fits within its binary structure. Meaning, that all the pixels that fall in the white side of the blueprint together with the black 
+Feature Detection is quite a tricky and challenging task, specially when you are using a cascade classifier that is meant to be used for face detection and yet you use it on such a simple object as an orange. Bear in mind that the haar cascade classifier is trying to detect features by means of swiping a 'blueprint' (see image below) that fits within its binary structure. Meaning, that all the pixels that fall in the white side of the blueprint together with the black pixels on the other side.
+
+Below a summary of the main functions used with the haar cascade classifier:
 
 | Function            |Action                                                                        |
 |:--------------------|------------------------------------------------------------------------------|
 |**cv2.CascadeClassifier()**|Import Cascade Classifier XML file|
 |**cv2.VideoCapture()**   |Improve Detection via history & varThreshold.|
 |**cv2.cvtColor()**|Draw rectangle based on contour.|
-|**orange_classifier.detectMultiScale()**    | Draw contours.|
-|**cv2.rectangle()**    | Add rectangle.|
-|**cv2.putText()**    | Add text.|
+|**orange_classifier.detectMultiScale()**    | Initializes detection settings|
+|**cv2.rectangle()**    | Add rectangle to detected feature.|
+|**cv2.putText()**    | Add text with 'Orange' tag|
 
 ## Test Image used: 
-I have used traffic_algo_github.mp4 that can be found in the repository.
+### Negative images.
 
-![Source Image Sequence](source_1.jpg)![Source Image Sequence](source_2.jpg)
+![Source Image Sequence](n.gif)
 
-## Region of Interest (ROI):
-![Source Image Sequence](roi_1.jpg)![Source Image Sequence](roi_2.jpg)
-
-
-## Mask:
-![Source Image Sequence](mask_1.jpg)![Source Image Sequence](mask_2.jpg)
+### Positive images:
+![Source Image Sequence](p.gif)
 
 ## Issues:
 Several issues around the detection and tracking algorithm can be spotted if we take a closer look at some of the screenshots provided.
@@ -49,7 +47,7 @@ Most of the issues are related with:
 + Shade Inconsistency.
 + Poor Colour Thresholding.
 
-![Source Image Sequence](source_3.jpg)
+![Source Image Sequence](general.gif)
 
 ## Summary:
 
