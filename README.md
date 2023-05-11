@@ -17,37 +17,16 @@ These are - in a nutshell - the main steps I took to put this small experiment t
 ![Source Image Sequence](general_1.gif) ![Source Image Sequence](general.gif)
 
 ## Contents :
-Object detection and tracking has numerous applications in computer vision, thus I wanted to summarize the main challenges we face when approaching a detection and tracking app in the following table. As we give solutions to challenges via built-in functions, I have only included the main functions used and a brief description of what each one does.
+Feature Detection is quite a tricky and challenging task, specially when you are using a cascade classifier that is meant to be used for face detection and yet you use it on such a simple object as an orange. Bear in mind that the haar cascade classifier is trying to detect features by means of swiping a 'blueprint' (see image below) that fits within its binary structure. Meaning, that all the pixels that fall in the white side of the blueprint together with the black 
 
 | Function            |Action                                                                        |
 |:--------------------|------------------------------------------------------------------------------|
-|*_Object Detection_*||
-|project.py           | Main app|
-|**cv2.VideoCapture()**   |We create the capture object|
-|**cv2.createBackgroundSubtractorMOG2()** | Object Detector (background subtractor through mask)|
-|**object_detector.apply()**| Apply object detector both to frame and roi.|
-|**cv2.findContours()**     |Extract coordinates from mask.|
-|**cv2.drawContours()**    | Draw contours.|
-|**cv2.contourArea()**|Calculate Area.|
-|**roi = frame[x1 : x2, y1 : y2]**|Extract region of intrest (ROI)|
-|**cv2.createBackgroundSubtractorMOG2(history,varThreshold)**   |Improve Detection via history & varThreshold.|
-|**cv2.boundingRect(),cv2.rectangle()**|Draw rectangle based on contour.|
-|**cv2.drawContours()**    | Draw contours.|
-|**cv2.threshold(mask, colour1, colour2,cv2.THRESH_BINARY)**    | Apply threshold to mask.colour1 & colour 2 range 0-255 BGR.|
-|*_Object Tracking_*||
-|object_tracker.py           | Tracker class|
-|```from object_tracker import *```    | Import tracker so we can load EuclideanDistTracker class.|
-|**tracker = EuclideanDistTracker()**    | Create object tracker.|
-|**tracker.update(detections)**    | Tracker update.|
-|**detections = [ ]**    | Empty list to store object coordinates (x, y, w, h).|
-|**cv2.putText()**    | Add text.|
+|**cv2.CascadeClassifier()**|Import Cascade Classifier XML file|
+|**cv2.VideoCapture()**   |Improve Detection via history & varThreshold.|
+|**cv2.cvtColor()**|Draw rectangle based on contour.|
+|**orange_classifier.detectMultiScale()**    | Draw contours.|
 |**cv2.rectangle()**    | Add rectangle.|
-
-
-
-
-
-
+|**cv2.putText()**    | Add text.|
 
 ## Test Image used: 
 I have used traffic_algo_github.mp4 that can be found in the repository.
