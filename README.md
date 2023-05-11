@@ -8,10 +8,10 @@ These are - in a nutshell - the main steps I took to put this small experiment t
 
 + **Install Cascade Trainer GUI**
 + **Prepare 150 positive images & 300 negative images (Negative to Positive ratio 2:1)**
-+ **Apply settings to Cascade Trainer**
-+ **Creation of ROI (Region of Interest)**
-+ **Apply Mask to ROI**
-+ **Detect Objects in ROI**
++ **Apply settings to Cascade Trainer** (see table below for details)
++ **Adjust scaleFactor()**
++ **Size Thresholding via minSize() and maxSize()**
++ **Set minNeighbors()**
 + **Apply Tracker (object_tracker.py)**
 
 ![Source Image Sequence](general.gif)
