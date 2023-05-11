@@ -53,6 +53,7 @@ Most of the issues are related with:
 + Haar Cascade Classifier settings (Need to study a bit more what each setting does!).
 
 ![Source Image Sequence](general.gif)
+The detection is pretty good, we can even see that when oranges are removed no new 'objects' are detected, meaning the fed images (positive&negative) were pretty consistent with what the cascade classifier was expecting.
 
 ## Summary:
 
