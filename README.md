@@ -33,10 +33,10 @@ Below a summary of the main functions used with the haar cascade classifier:
 ## Test Image used: 
 ### Negative images.
 
-![Source Image Sequence](n.gif)
+![Source Image Sequence.](n.gif)
 
 ### Positive images:
-![Source Image Sequence](p.gif)
+![Source Image Sequence.](p.gif)
 
 ## Issues:
 Several issues around the detection and tracking algorithm can be spotted if we take a closer look at some of the screenshots provided.
