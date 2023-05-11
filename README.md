@@ -45,7 +45,7 @@ Most of the issues are related with:
 
 + Improper illumination.
 + Shades.
-+ Color post-processing. I should have used ```cv2.COLOR_BGR2GRAY()``` instead of ```cv2.COLOR_BGR2LAB()``, but the latter was hard to fine-tune.
++ Color post-processing. I should have used ```cv2.COLOR_BGR2GRAY()``` instead of ```cv2.COLOR_BGR2LAB()```, but the latter was hard to fine-tune.
 + Haar Cascade Classifier settings (Need to study a bit more what each setting does!).
 
 ![Source Image Sequence](general.gif)
@@ -65,6 +65,10 @@ cv2.VideoCapture()
 cv2.cvtColor(frame, cv2.COLOR_BGR2LAB)
 ```
 ```python
-# Calculate area delimited by the contours (so we can impose a conditional later)
-cv2.drawContours(roi,[cnt], -1, (0,255,0), 2)
+#Feature detector initialization and settings
+orange_classifier.detectMultiScale()
+```
+```python
+#Special feature for Haar Cascade that scales the (target) image/pixel
+cv2.CASCADE_SCALE_IMAGE()
 ```
