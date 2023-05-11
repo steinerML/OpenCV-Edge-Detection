@@ -17,12 +17,13 @@ These are - in a nutshell - the main steps I took to put this small experiment t
 ![Source Image Sequence](general_1.gif)
 
 ## Contents :
-Feature Detection is quite a tricky and challenging task, specially when you are using a cascade classifier that is meant to be used for face detection and yet you use it on such a simple object as an orange.
-Bear in mind that the haar cascade classifier is trying to detect features by means of swiping a 'blueprint' (see image below) that fits within its binary structure. Meaning, that all the pixels that fall in the white side of the blueprint together with the black pixels on the other side.
-<p align="center" width="100%">
-    <img width="33%" src="haar.png"> 
-</p>
+<img align="right" width="50%" src="haar.png"> 
+Feature Detection is quite a tricky and challenging task, specially when you are using a cascade classifier that is meant to be used for face detection and yet you use it on such a simple object as an orange. 
 
+Bear in mind that the haar cascade classifier is trying to detect features by means of swiping a 'blueprint' (see image below) that fits within its binary structure. Meaning, that all the pixels that fall in the white side of the blueprint together with the black pixels on the other side.
+
+&nbsp;
+## Summary :
 Below a summary of the main functions used with the haar cascade classifier:
 
 | Function            |Action                                                                        |
