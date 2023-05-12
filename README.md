@@ -1,4 +1,5 @@
 # OpenCV Feature Detection using Haar Cascade
+### Orange Feature Detection
 
 In this short coding exercise I have used a basic feature of OpenCV that is mainly used for face detection but I applied it to something so simple as an orange just to see how the feature detection (if there are any in an orange besides an edge against a background) was doing. 
 
