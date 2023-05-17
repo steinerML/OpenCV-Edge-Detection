@@ -1,9 +1,9 @@
 # OpenCV Feature Detection using Haar Cascade
 ### Orange Feature Detection
 
-In this short coding exercise I have used a basic feature of OpenCV that is mainly used for face detection but I applied it to something so simple as an orange just to see how the feature detection (if there are any in an orange besides an edge against a background) was doing. 
+In this short coding exercise I have used a basic feature of OpenCV that is mainly used for face detection but I applied it to something so simple as an orange just to see how the feature detection was doing. 
 
-The method I used is the so-called haar cascade together with a Cascade Classifier (XML file) that I put together myself with a set of images (negative&positives) using [Cascade Trainer GUI.](https://amin-ahmadi.com/cascade-trainer-gui)
+The method I used is the Cascade Classifier (Haar Cascade) (XML file) that I put together myself with a set of images (negative&positives) using [Cascade Trainer GUI.](https://amin-ahmadi.com/cascade-trainer-gui)
 
 These are - in a nutshell - the main steps I took to put this small experiment together:
 
